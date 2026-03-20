@@ -48,8 +48,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/5 text-center text-sm text-muted">
-          &copy; {new Date().getFullYear()} RAYPUB. All rights reserved.
+        <div className="mt-12 pt-8 border-t border-white/5 text-center text-sm text-muted space-y-1">
+          <p>&copy; {new Date().getFullYear()} RAYPUB. All rights reserved.</p>
+          <p>
+            Designed by{" "}
+            <a href="https://blueprintmedia.tech" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">
+              Blueprint Media
+            </a>
+          </p>
         </div>
       </div>
     </footer>

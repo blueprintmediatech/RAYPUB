@@ -187,13 +187,19 @@ export default function DesignPage() {
               <span className="text-muted font-normal text-sm">UI Breakdown</span>
             </h1>
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted">
-            <Monitor size={14} />
+          <div className="flex items-center gap-3 text-sm text-muted">
             <span>17 Pages</span>
             <span className="text-border">|</span>
             <span>2 Portals</span>
             <span className="text-border">|</span>
             <span>4 Modals</span>
+            <span className="text-border">|</span>
+            <span>
+              Designed by{" "}
+              <a href="https://blueprintmedia.tech" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors font-medium">
+                Blueprint Media
+              </a>
+            </span>
           </div>
         </div>
       </div>
