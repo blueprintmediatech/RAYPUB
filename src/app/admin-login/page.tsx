@@ -3,8 +3,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { Shield } from "lucide-react";
 
-export default function LoginPage() {
+export default function AdminLoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,21 +19,19 @@ export default function LoginPage() {
 
     setTimeout(() => {
       if (
-        email.toLowerCase() === "client@client.com" &&
-        password === "CLIENT26!"
+        email.toLowerCase() === "admin@admin.com" &&
+        password === "ADMIN26!"
       ) {
         sessionStorage.setItem("raypub_user", JSON.stringify({
-          role: "client",
+          role: "admin",
           email: email.toLowerCase(),
-          name: "Marcus Johnson",
-          artist: "M.J. Beats",
-          package: "Publishing Admin",
+          name: "Admin",
         }));
-        router.push("/dashboard");
+        router.push("/admin");
         return;
       }
 
-      setError("Invalid email or password.");
+      setError("Invalid admin credentials.");
       setLoading(false);
     }, 800);
   };
@@ -44,7 +43,10 @@ export default function LoginPage() {
           <Link href="/" className="text-3xl font-bold tracking-tight">
             RAY<span className="text-gold">PUB</span>
           </Link>
-          <p className="mt-2 text-muted">Sign in to your client portal</p>
+          <div className="mt-3 inline-flex items-center gap-2 text-red-400 text-sm font-medium">
+            <Shield size={14} />
+            Admin Portal
+          </div>
         </div>
 
         <form
@@ -58,13 +60,13 @@ export default function LoginPage() {
           )}
 
           <div>
-            <label className="block text-sm font-medium mb-2">Email</label>
+            <label className="block text-sm font-medium mb-2">Admin Email</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full bg-surface-light border border-border rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-gold transition-colors"
-              placeholder="you@example.com"
+              placeholder="admin@admin.com"
               required
             />
           </div>
@@ -81,39 +83,13 @@ export default function LoginPage() {
             />
           </div>
 
-          <div className="flex items-center justify-between text-sm">
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                className="rounded border-border accent-gold"
-              />
-              <span className="text-muted">Remember me</span>
-            </label>
-            <a
-              href="#"
-              className="text-gold hover:text-gold-light transition-colors"
-            >
-              Forgot password?
-            </a>
-          </div>
-
           <button
             type="submit"
             disabled={loading}
-            className="block w-full bg-gold hover:bg-gold-light text-black font-semibold py-3 rounded-md transition-colors text-center disabled:opacity-50 disabled:cursor-not-allowed"
+            className="block w-full bg-red-500 hover:bg-red-400 text-white font-semibold py-3 rounded-md transition-colors text-center disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? "Signing in..." : "Sign In"}
+            {loading ? "Signing in..." : "Admin Sign In"}
           </button>
-
-          <p className="text-center text-sm text-muted">
-            Don&apos;t have an account?{" "}
-            <Link
-              href="/signup"
-              className="text-gold hover:text-gold-light transition-colors"
-            >
-              Get started
-            </Link>
-          </p>
         </form>
       </div>
     </div>

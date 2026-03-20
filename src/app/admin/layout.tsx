@@ -40,7 +40,7 @@ export default function AdminLayout({
   useEffect(() => {
     const userData = sessionStorage.getItem("raypub_user");
     if (!userData) {
-      router.push("/login");
+      router.push("/admin-login");
       return;
     }
     const user = JSON.parse(userData);
@@ -53,7 +53,7 @@ export default function AdminLayout({
 
   const handleLogout = () => {
     sessionStorage.removeItem("raypub_user");
-    router.push("/login");
+    router.push("/admin-login");
   };
 
   if (!authorized) {
