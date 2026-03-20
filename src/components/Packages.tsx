@@ -1,12 +1,20 @@
+"use client";
+
+import { useRef, useEffect } from "react";
 import Link from "next/link";
 import { Check } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const packages = [
   {
     name: "Registration",
     price: "$1,000",
     period: "one-time",
-    description: "Get registered everywhere that matters. We set up all your accounts and business entities.",
+    description:
+      "Get registered everywhere that matters. We set up all your accounts and business entities.",
     features: [
       "BMI Registration & Setup",
       "SoundExchange Registration",
@@ -23,7 +31,8 @@ const packages = [
     name: "Publishing Admin",
     price: "$1,000",
     period: "setup + $100/mo",
-    description: "Full publishing administration with royalty collection, auditing, and financial reporting.",
+    description:
+      "Full publishing administration with royalty collection, auditing, and financial reporting.",
     features: [
       "Everything in Registration",
       "Publishing Administration",
@@ -40,7 +49,8 @@ const packages = [
     name: "Full Label Services",
     price: "$1,000",
     period: "one-time",
-    description: "Complete label infrastructure with accounting, contracts, and legal — everything you need.",
+    description:
+      "Complete label infrastructure with accounting, contracts, and legal — everything you need.",
     features: [
       "Everything in Publishing Admin",
       "Full Label Accounting",
@@ -56,11 +66,57 @@ const packages = [
 ];
 
 export default function Packages() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        headingRef.current,
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      if (cardsRef.current) {
+        gsap.fromTo(
+          cardsRef.current.children,
+          { opacity: 0, y: 100, rotateY: 15 },
+          {
+            opacity: 1,
+            y: 0,
+            rotateY: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: cardsRef.current,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="packages" className="py-24 bg-background">
+    <section ref={sectionRef} id="packages" className="relative py-24 bg-background/90 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+        <div ref={headingRef} className="text-center max-w-2xl mx-auto mb-16 opacity-0">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             Choose Your <span className="text-gold">Package</span>
           </h2>
           <p className="mt-4 text-muted text-lg">
@@ -69,18 +125,22 @@ export default function Packages() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div
+          ref={cardsRef}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto"
+          style={{ perspective: "1000px" }}
+        >
           {packages.map((pkg) => (
             <div
               key={pkg.name}
-              className={`relative flex flex-col rounded-xl border p-8 ${
+              className={`relative flex flex-col rounded-xl border p-8 backdrop-blur-md opacity-0 transition-all duration-500 hover:translate-y-[-4px] hover:shadow-2xl hover:shadow-gold/5 ${
                 pkg.popular
-                  ? "border-gold bg-gold/5"
-                  : "border-border bg-surface"
+                  ? "border-gold/50 bg-gold/5"
+                  : "border-white/5 bg-white/[0.02]"
               }`}
             >
               {pkg.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-xs font-bold px-4 py-1 rounded-full">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-xs font-bold px-4 py-1 rounded-full shadow-lg shadow-gold/20">
                   MOST POPULAR
                 </div>
               )}
@@ -107,10 +167,10 @@ export default function Packages() {
 
               <Link
                 href="/signup"
-                className={`mt-8 block text-center font-semibold py-3 rounded-md transition-colors ${
+                className={`mt-8 block text-center font-semibold py-3 rounded-md transition-all duration-300 ${
                   pkg.popular
-                    ? "bg-gold hover:bg-gold-light text-black"
-                    : "border border-border hover:border-gold/50 text-foreground"
+                    ? "bg-gold hover:bg-gold-light text-black shadow-lg shadow-gold/20 hover:shadow-gold/30"
+                    : "border border-white/10 hover:border-gold/50 text-foreground hover:bg-gold/5"
                 }`}
               >
                 Get Started

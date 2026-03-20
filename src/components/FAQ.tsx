@@ -1,7 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const faqs = [
   {
@@ -40,39 +44,87 @@ const faqs = [
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
+  const itemsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        headingRef.current,
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      if (itemsRef.current) {
+        gsap.fromTo(
+          itemsRef.current.children,
+          { opacity: 0, x: -40 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: itemsRef.current,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section id="faq" className="py-24 bg-surface">
+    <section ref={sectionRef} id="faq" className="py-24 bg-surface/80 backdrop-blur-sm">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+        <div ref={headingRef} className="text-center mb-16 opacity-0">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             Frequently Asked <span className="text-gold">Questions</span>
           </h2>
         </div>
 
-        <div className="space-y-3">
+        <div ref={itemsRef} className="space-y-3">
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className="border border-border rounded-lg overflow-hidden"
+              className="border border-white/5 rounded-lg overflow-hidden backdrop-blur-md bg-white/[0.02] opacity-0"
             >
               <button
-                className="w-full flex items-center justify-between p-5 text-left hover:bg-surface-light transition-colors"
+                className="w-full flex items-center justify-between p-5 text-left hover:bg-white/[0.03] transition-colors"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
               >
                 <span className="font-medium text-sm">{faq.q}</span>
                 <ChevronDown
                   size={18}
-                  className={`text-muted shrink-0 ml-4 transition-transform ${
+                  className={`text-gold shrink-0 ml-4 transition-transform duration-300 ${
                     openIndex === i ? "rotate-180" : ""
                   }`}
                 />
               </button>
-              {openIndex === i && (
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  openIndex === i ? "max-h-96" : "max-h-0"
+                }`}
+              >
                 <div className="px-5 pb-5 text-sm text-muted leading-relaxed">
                   {faq.a}
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>

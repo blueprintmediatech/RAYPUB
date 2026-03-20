@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-surface border-t border-border">
+    <footer className="relative bg-surface/80 backdrop-blur-sm border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
@@ -20,9 +20,9 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-2 text-sm text-muted">
-              <li><a href="#packages" className="hover:text-foreground transition-colors">Registration Package</a></li>
-              <li><a href="#packages" className="hover:text-foreground transition-colors">Publishing Administration</a></li>
-              <li><a href="#packages" className="hover:text-foreground transition-colors">Full Label Services</a></li>
+              <li><a href="#packages" className="hover:text-gold transition-colors">Registration Package</a></li>
+              <li><a href="#packages" className="hover:text-gold transition-colors">Publishing Administration</a></li>
+              <li><a href="#packages" className="hover:text-gold transition-colors">Full Label Services</a></li>
             </ul>
           </div>
 
@@ -31,9 +31,9 @@ export default function Footer() {
               Company
             </h4>
             <ul className="space-y-2 text-sm text-muted">
-              <li><a href="#faq" className="hover:text-foreground transition-colors">FAQ</a></li>
-              <li><a href="#contact" className="hover:text-foreground transition-colors">Contact</a></li>
-              <li><Link href="/login" className="hover:text-foreground transition-colors">Client Portal</Link></li>
+              <li><a href="#faq" className="hover:text-gold transition-colors">FAQ</a></li>
+              <li><a href="#contact" className="hover:text-gold transition-colors">Contact</a></li>
+              <li><Link href="/login" className="hover:text-gold transition-colors">Client Portal</Link></li>
             </ul>
           </div>
 
@@ -42,13 +42,13 @@ export default function Footer() {
               Legal
             </h4>
             <ul className="space-y-2 text-sm text-muted">
-              <li><a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Terms of Service</a></li>
+              <li><a href="#" className="hover:text-gold transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-gold transition-colors">Terms of Service</a></li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted">
+        <div className="mt-12 pt-8 border-t border-white/5 text-center text-sm text-muted">
           &copy; {new Date().getFullYear()} RAYPUB. All rights reserved.
         </div>
       </div>
