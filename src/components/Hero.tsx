@@ -60,7 +60,7 @@ export default function Hero() {
         <div className="text-center max-w-4xl mx-auto">
           <div
             ref={badgeRef}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/30 bg-gold/5 backdrop-blur-sm text-gold text-sm font-medium mb-8 opacity-0"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/30 bg-black/50 backdrop-blur-md text-gold text-sm font-medium mb-8 opacity-0 shadow-lg shadow-black/50"
           >
             <Music size={14} />
             Publishing Administration for Independent Artists
@@ -69,15 +69,17 @@ export default function Hero() {
           <h1
             ref={headingRef}
             className="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight leading-[1.05]"
+            style={{ textShadow: "0 2px 20px rgba(0,0,0,0.9), 0 4px 40px rgba(0,0,0,0.8), 0 0 80px rgba(0,0,0,0.6)" }}
           >
-            <span className="block">Your Music.</span>
-            <span className="block">Your Money.</span>
-            <span className="block text-gold">Our Expertise.</span>
+            <span className="block text-white">Your Music.</span>
+            <span className="block text-white">Your Money.</span>
+            <span className="block text-gold" style={{ textShadow: "0 2px 20px rgba(212,168,67,0.5), 0 4px 40px rgba(0,0,0,0.8), 0 0 60px rgba(212,168,67,0.3)" }}>Our Expertise.</span>
           </h1>
 
           <p
             ref={subRef}
-            className="mt-8 text-lg sm:text-xl text-muted max-w-2xl mx-auto leading-relaxed opacity-0"
+            className="mt-8 text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed opacity-0"
+            style={{ textShadow: "0 2px 15px rgba(0,0,0,0.9), 0 4px 30px rgba(0,0,0,0.7)" }}
           >
             The one-stop platform for independent artists and labels to register
             their publishing, collect royalties, and manage their entire music
@@ -87,7 +89,7 @@ export default function Hero() {
           <div ref={ctaRef} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/signup"
-              className="group bg-gold hover:bg-gold-light text-black font-semibold px-8 py-3.5 rounded-md text-base transition-all flex items-center gap-2 backdrop-blur-sm"
+              className="group bg-gold hover:bg-gold-light text-black font-semibold px-8 py-3.5 rounded-md text-base transition-all flex items-center gap-2 backdrop-blur-sm shadow-xl shadow-black/50"
             >
               Get Started Today
               <ArrowRight
@@ -97,7 +99,7 @@ export default function Hero() {
             </Link>
             <a
               href="#packages"
-              className="border border-white/10 hover:border-gold/50 text-foreground font-medium px-8 py-3.5 rounded-md text-base transition-colors backdrop-blur-sm"
+              className="border border-white/20 hover:border-gold/50 text-white font-medium px-8 py-3.5 rounded-md text-base transition-colors backdrop-blur-md bg-black/30 shadow-xl shadow-black/50"
             >
               View Packages
             </a>
@@ -115,7 +117,8 @@ export default function Hero() {
           ].map((item) => (
             <div
               key={item.label}
-              className="flex items-center gap-3 justify-center text-sm text-muted/80"
+              className="flex items-center gap-3 justify-center text-sm text-white/80"
+              style={{ textShadow: "0 2px 10px rgba(0,0,0,0.9)" }}
             >
               <item.icon size={18} className="text-gold shrink-0" />
               <span>{item.label}</span>
