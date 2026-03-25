@@ -13,6 +13,7 @@ const packages = [
     name: "Label / Music Career Setup",
     price: "$1,500",
     period: "one-time",
+    setupFee: "",
     description:
       "Get registered everywhere that matters. We set up all your accounts and business entities.",
     features: [
@@ -29,8 +30,9 @@ const packages = [
   },
   {
     name: "Artist Admin",
-    price: "$1,500",
-    period: "setup + $89.99/mo",
+    price: "$89.99",
+    period: "/month",
+    setupFee: "$1,500 one-time setup",
     description:
       "Full publishing administration with royalty collection, auditing, and financial reporting.",
     features: [
@@ -47,8 +49,9 @@ const packages = [
   },
   {
     name: "Full Label Services",
-    price: "$1,500",
-    period: "setup + $249.99/mo",
+    price: "$249.99",
+    period: "/month",
+    setupFee: "$1,500 one-time setup",
     description:
       "Complete label infrastructure with accounting, contracts, and legal — everything you need.",
     features: [
@@ -151,6 +154,9 @@ export default function Packages() {
                   {pkg.price}
                 </span>
                 <span className="text-sm text-muted ml-2">{pkg.period}</span>
+                {pkg.setupFee && (
+                  <p className="text-xs text-muted mt-1">+ {pkg.setupFee}</p>
+                )}
               </div>
               <p className="mt-3 text-sm text-muted leading-relaxed">
                 {pkg.description}
