@@ -17,11 +17,11 @@ const stats = [
 ];
 
 const recentClients = [
-  { name: "Marcus Johnson", artist: "M.J. Beats", package: "Publishing Admin", status: "active", revenue: "$2,400" },
+  { name: "Marcus Johnson", artist: "M.J. Beats", package: "Artist Admin", status: "active", revenue: "$2,400" },
   { name: "Sarah Williams", artist: "S.Will", package: "Full Label", status: "active", revenue: "$4,100" },
-  { name: "Devon Carter", artist: "DCarter Music", package: "Registration", status: "setup", revenue: "$1,000" },
-  { name: "Ashley Thompson", artist: "Ash T", package: "Publishing Admin", status: "active", revenue: "$1,800" },
-  { name: "Tyler Reed", artist: "T.Reed Productions", package: "Registration", status: "pending", revenue: "$1,000" },
+  { name: "Devon Carter", artist: "DCarter Music", package: "Career Setup", status: "setup", revenue: "$1,000" },
+  { name: "Ashley Thompson", artist: "Ash T", package: "Artist Admin", status: "active", revenue: "$1,800" },
+  { name: "Tyler Reed", artist: "T.Reed Productions", package: "Career Setup", status: "pending", revenue: "$1,000" },
 ];
 
 const recentTasks = [
@@ -147,8 +147,8 @@ export default function AdminDashboard() {
         <h3 className="text-base font-semibold mb-4">Revenue by Package</h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
-            { pkg: "Registration", clients: 4, revenue: "$4,000", pct: 28 },
-            { pkg: "Publishing Admin", clients: 5, revenue: "$6,200", pct: 44 },
+            { pkg: "Career Setup", clients: 4, revenue: "$4,000", pct: 28 },
+            { pkg: "Artist Admin", clients: 5, revenue: "$6,200", pct: 44 },
             { pkg: "Full Label", clients: 3, revenue: "$4,000", pct: 28 },
           ].map((r) => (
             <div key={r.pkg} className="bg-surface-light rounded-lg p-4">

@@ -126,12 +126,12 @@ export default function Contact() {
               <select className="w-full bg-white/[0.03] border border-white/10 rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-gold/50 transition-colors">
                 <option value="">Select a package</option>
                 <option value="registration">
-                  Registration Package — $1,000
+                  Label / Music Career Setup — $1,500
                 </option>
                 <option value="publishing">
-                  Publishing Administration — $1,000 + $100/mo
+                  Artist Admin — $1,500 + $89.99/mo
                 </option>
-                <option value="label">Full Label Services — $1,000</option>
+                <option value="label">Full Label Services — $1,500 + $249.99/mo</option>
               </select>
             </div>
 

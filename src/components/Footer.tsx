@@ -20,8 +20,8 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-2 text-sm text-muted">
-              <li><a href="#packages" className="hover:text-gold transition-colors">Registration Package</a></li>
-              <li><a href="#packages" className="hover:text-gold transition-colors">Publishing Administration</a></li>
+              <li><a href="#packages" className="hover:text-gold transition-colors">Label / Music Career Setup</a></li>
+              <li><a href="#packages" className="hover:text-gold transition-colors">Artist Admin</a></li>
               <li><a href="#packages" className="hover:text-gold transition-colors">Full Label Services</a></li>
             </ul>
           </div>

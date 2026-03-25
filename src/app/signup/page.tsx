@@ -70,9 +70,9 @@ export default function SignupPage() {
           <div>
             <label className="block text-sm font-medium mb-2">Select Package</label>
             <select className="w-full bg-surface-light border border-border rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-gold transition-colors">
-              <option value="registration">Registration Package — $1,000</option>
-              <option value="publishing">Publishing Administration — $1,000 + $100/mo</option>
-              <option value="label">Full Label Services — $1,000</option>
+              <option value="registration">Label / Music Career Setup — $1,500</option>
+              <option value="publishing">Artist Admin — $1,500 + $89.99/mo</option>
+              <option value="label">Full Label Services — $1,500 + $249.99/mo</option>
             </select>
           </div>
 

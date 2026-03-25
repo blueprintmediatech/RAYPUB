@@ -60,37 +60,45 @@ export default function AdminSettingsPage() {
 
       <div className="bg-surface border border-border rounded-xl p-6 space-y-5">
         <h3 className="text-base font-semibold">Package Pricing</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-2">Registration Fee</label>
+            <label className="block text-sm font-medium mb-2">Career Setup Fee</label>
             <input
               type="text"
-              defaultValue="$1,000"
+              defaultValue="$1,500"
               className="w-full bg-surface-light border border-border rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-gold transition-colors"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-2">Publishing Admin Setup</label>
+            <label className="block text-sm font-medium mb-2">Artist Admin Setup</label>
             <input
               type="text"
-              defaultValue="$1,000"
+              defaultValue="$1,500"
               className="w-full bg-surface-light border border-border rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-gold transition-colors"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-2">Publishing Monthly</label>
+            <label className="block text-sm font-medium mb-2">Artist Admin Monthly</label>
             <input
               type="text"
-              defaultValue="$100"
+              defaultValue="$89.99"
+              className="w-full bg-surface-light border border-border rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-gold transition-colors"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-2">Full Label Setup</label>
+            <input
+              type="text"
+              defaultValue="$1,500"
               className="w-full bg-surface-light border border-border rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-gold transition-colors"
             />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-2">Full Label Services Fee</label>
+          <label className="block text-sm font-medium mb-2">Full Label Monthly</label>
           <input
             type="text"
-            defaultValue="$1,000"
+            defaultValue="$249.99"
             className="w-full bg-surface-light border border-border rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-gold transition-colors"
           />
         </div>

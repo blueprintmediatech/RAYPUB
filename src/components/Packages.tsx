@@ -10,8 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const packages = [
   {
-    name: "Registration",
-    price: "$1,000",
+    name: "Label / Music Career Setup",
+    price: "$1,500",
     period: "one-time",
     description:
       "Get registered everywhere that matters. We set up all your accounts and business entities.",
@@ -28,13 +28,13 @@ const packages = [
     popular: false,
   },
   {
-    name: "Publishing Admin",
-    price: "$1,000",
-    period: "setup + $100/mo",
+    name: "Artist Admin",
+    price: "$1,500",
+    period: "setup + $89.99/mo",
     description:
       "Full publishing administration with royalty collection, auditing, and financial reporting.",
     features: [
-      "Everything in Registration",
+      "Everything in Label / Music Career Setup",
       "Publishing Administration",
       "Royalty Collection & Tracking",
       "Book Auditing & Financial Reports",
@@ -47,12 +47,12 @@ const packages = [
   },
   {
     name: "Full Label Services",
-    price: "$1,000",
-    period: "one-time",
+    price: "$1,500",
+    period: "setup + $249.99/mo",
     description:
       "Complete label infrastructure with accounting, contracts, and legal — everything you need.",
     features: [
-      "Everything in Publishing Admin",
+      "Everything in Artist Admin",
       "Full Label Accounting",
       "In-House Contract Drafting",
       "Legal Work & Consultation",

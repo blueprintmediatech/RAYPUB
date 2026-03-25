@@ -5,14 +5,14 @@ import { Search, Plus, MoreVertical, Mail, Phone } from "lucide-react";
 import Modal from "@/components/Modal";
 
 const initialClients = [
-  { name: "Marcus Johnson", artist: "M.J. Beats", email: "marcus@mjbeats.com", phone: "(310) 555-0101", package: "Publishing Admin", status: "active", joined: "Jan 15, 2026", revenue: "$2,400", registrations: "4/6" },
+  { name: "Marcus Johnson", artist: "M.J. Beats", email: "marcus@mjbeats.com", phone: "(310) 555-0101", package: "Artist Admin", status: "active", joined: "Jan 15, 2026", revenue: "$2,400", registrations: "4/6" },
   { name: "Sarah Williams", artist: "S.Will", email: "sarah@swill.com", phone: "(213) 555-0202", package: "Full Label", status: "active", joined: "Dec 3, 2025", revenue: "$4,100", registrations: "6/6" },
-  { name: "Devon Carter", artist: "DCarter Music", email: "devon@dcarter.com", phone: "(323) 555-0303", package: "Registration", status: "setup", joined: "Mar 10, 2026", revenue: "$1,000", registrations: "1/6" },
-  { name: "Ashley Thompson", artist: "Ash T", email: "ashley@asht.com", phone: "(424) 555-0404", package: "Publishing Admin", status: "active", joined: "Feb 1, 2026", revenue: "$1,800", registrations: "6/6" },
-  { name: "Tyler Reed", artist: "T.Reed Productions", email: "tyler@treedprod.com", phone: "(818) 555-0505", package: "Registration", status: "pending", joined: "Mar 17, 2026", revenue: "$1,000", registrations: "0/6" },
+  { name: "Devon Carter", artist: "DCarter Music", email: "devon@dcarter.com", phone: "(323) 555-0303", package: "Career Setup", status: "setup", joined: "Mar 10, 2026", revenue: "$1,000", registrations: "1/6" },
+  { name: "Ashley Thompson", artist: "Ash T", email: "ashley@asht.com", phone: "(424) 555-0404", package: "Artist Admin", status: "active", joined: "Feb 1, 2026", revenue: "$1,800", registrations: "6/6" },
+  { name: "Tyler Reed", artist: "T.Reed Productions", email: "tyler@treedprod.com", phone: "(818) 555-0505", package: "Career Setup", status: "pending", joined: "Mar 17, 2026", revenue: "$1,000", registrations: "0/6" },
   { name: "Jasmine Moore", artist: "Jas M", email: "jas@jasm.com", phone: "(310) 555-0606", package: "Full Label", status: "active", joined: "Nov 20, 2025", revenue: "$3,800", registrations: "6/6" },
-  { name: "Chris Davis", artist: "C.Davis", email: "chris@cdavis.com", phone: "(213) 555-0707", package: "Publishing Admin", status: "active", joined: "Jan 28, 2026", revenue: "$2,000", registrations: "5/6" },
-  { name: "Nina Patel", artist: "NINA", email: "nina@ninamusic.com", phone: "(323) 555-0808", package: "Registration", status: "setup", joined: "Mar 5, 2026", revenue: "$1,000", registrations: "2/6" },
+  { name: "Chris Davis", artist: "C.Davis", email: "chris@cdavis.com", phone: "(213) 555-0707", package: "Artist Admin", status: "active", joined: "Jan 28, 2026", revenue: "$2,000", registrations: "5/6" },
+  { name: "Nina Patel", artist: "NINA", email: "nina@ninamusic.com", phone: "(323) 555-0808", package: "Career Setup", status: "setup", joined: "Mar 5, 2026", revenue: "$1,000", registrations: "2/6" },
 ];
 
 const statusBadge: Record<string, { bg: string; text: string }> = {
@@ -49,7 +49,7 @@ export default function ClientsPage() {
       package: pkg,
       status: "pending",
       joined,
-      revenue: pkg === "Publishing Admin" ? "$1,100" : "$1,000",
+      revenue: "$1,500",
       registrations: "0/6",
     };
     setClients([newClient, ...clients]);
@@ -89,8 +89,8 @@ export default function ClientsPage() {
           className="bg-surface border border-border rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-gold"
         >
           <option value="">All Packages</option>
-          <option value="Registration">Registration</option>
-          <option value="Publishing Admin">Publishing Admin</option>
+          <option value="Career Setup">Career Setup</option>
+          <option value="Artist Admin">Artist Admin</option>
           <option value="Full Label">Full Label</option>
         </select>
         <select
@@ -185,9 +185,9 @@ export default function ClientsPage() {
           <div>
             <label className="block text-sm font-medium mb-1.5">Package</label>
             <select name="package" required className="w-full bg-surface-light border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:border-gold">
-              <option value="Registration">Registration — $1,000</option>
-              <option value="Publishing Admin">Publishing Admin — $1,000 + $100/mo</option>
-              <option value="Full Label">Full Label Services — $1,000</option>
+              <option value="Career Setup">Label / Music Career Setup — $1,500</option>
+              <option value="Artist Admin">Artist Admin — $1,500 + $89.99/mo</option>
+              <option value="Full Label">Full Label Services — $1,500 + $249.99/mo</option>
             </select>
           </div>
           <div className="flex gap-3 pt-2">

@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: "What's the difference between the packages?",
-    a: "The Registration package is a one-time setup of all your accounts and business entities. Publishing Admin adds ongoing royalty collection, auditing, and monthly administration. Full Label Services adds accounting, legal work, contracts, and a dedicated account manager.",
+    a: "The Label / Music Career Setup package is a one-time setup of all your accounts and business entities. Artist Admin adds ongoing royalty collection, auditing, and monthly administration. Full Label Services adds accounting, legal work, contracts, and a dedicated account manager.",
   },
   {
     q: "Can I upgrade my package later?",
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     q: "Is there a minimum commitment?",
-    a: "The Registration and Full Label Services packages are one-time fees with no recurring commitment. The Publishing Admin package has a monthly fee of $100 after the initial setup, with a minimum 12-month term.",
+    a: "The Label / Music Career Setup package is a one-time $1,500 fee with no recurring commitment. The Artist Admin package is $1,500 setup plus $89.99/month, and Full Label Services is $1,500 setup plus $249.99/month. Monthly packages have a minimum 12-month term.",
   },
 ];
 

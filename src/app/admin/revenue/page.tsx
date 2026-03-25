@@ -10,14 +10,14 @@ const monthlyRevenue = [
 ];
 
 const clientRevenue = [
-  { name: "Sarah Williams", package: "Full Label", setup: "$1,000", monthly: "$0", total: "$4,100" },
-  { name: "Jasmine Moore", package: "Full Label", setup: "$1,000", monthly: "$0", total: "$3,800" },
-  { name: "Marcus Johnson", package: "Publishing Admin", setup: "$1,000", monthly: "$400", total: "$2,400" },
-  { name: "Chris Davis", package: "Publishing Admin", setup: "$1,000", monthly: "$200", total: "$2,000" },
-  { name: "Ashley Thompson", package: "Publishing Admin", setup: "$1,000", monthly: "$200", total: "$1,800" },
-  { name: "Devon Carter", package: "Registration", setup: "$1,000", monthly: "$0", total: "$1,000" },
-  { name: "Tyler Reed", package: "Registration", setup: "$1,000", monthly: "$0", total: "$1,000" },
-  { name: "Nina Patel", package: "Registration", setup: "$1,000", monthly: "$0", total: "$1,000" },
+  { name: "Sarah Williams", package: "Full Label Services", setup: "$1,500", monthly: "$0", total: "$4,100" },
+  { name: "Jasmine Moore", package: "Full Label Services", setup: "$1,500", monthly: "$0", total: "$3,800" },
+  { name: "Marcus Johnson", package: "Artist Admin", setup: "$1,500", monthly: "$400", total: "$2,400" },
+  { name: "Chris Davis", package: "Artist Admin", setup: "$1,500", monthly: "$200", total: "$2,000" },
+  { name: "Ashley Thompson", package: "Artist Admin", setup: "$1,500", monthly: "$200", total: "$1,800" },
+  { name: "Devon Carter", package: "Registration", setup: "$1,500", monthly: "$0", total: "$1,000" },
+  { name: "Tyler Reed", package: "Registration", setup: "$1,500", monthly: "$0", total: "$1,000" },
+  { name: "Nina Patel", package: "Registration", setup: "$1,500", monthly: "$0", total: "$1,000" },
 ];
 
 export default function RevenuePage() {
